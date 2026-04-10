@@ -1,20 +1,13 @@
 {
-  "primary": {
-    "provider": "openrouter",
-    "model": "arcee-ai/trinity-large-preview:free"
-  },
+  "provider": "openrouter",
+  "primary": "openai/gpt-4o-mini",
   "fallbacks": [
-    {
-      "provider": "openrouter",
-      "model": "meta-llama/llama-3.1-8b-instruct"
-    },
-    {
-      "provider": "openrouter",
-      "model": "mistralai/mistral-7b-instruct"
-    }
+    "meta-llama/llama-3.1-8b-instruct",
+    "mistralai/mistral-7b-instruct"
   ],
   "retry": {
-    "max_attempts_per_model": 2,
-    "backoff_seconds": [2, 5]
+    "attempts": 3,
+    "backoff_seconds": [1, 2, 5],
+    "switch_on": ["timeout", "rate_limit", "5xx", "empty_response", "provider_error"]
   }
 }

@@ -1,30 +1,7 @@
-/* Paleta sugerida anteriormente:
-   Primária: #4A90E2
-   Secundária: #F5A623
-   Texto: #333333
-   Fundo: #FFFFFF
-*/
-
 :root {
-  --primary: #4A90E2;
-  --secondary: #F5A623;
-  --text: #333333;
-  --bg: #FFFFFF;
+  --ia-blue: #4A90E2;
+  --ia-orange: #F5A623;
 }
-
-body {
-  color: var(--text);
-  background: var(--bg);
-}
-
-a, a:visited {
-  color: var(--primary);
-}
-
-a:hover {
-  color: var(--secondary);
-}
-
-.site-title, .post-title {
-  letter-spacing: 0.2px;
-}
+.site-title { color: var(--ia-blue) !important; font-weight: 700; }
+a { color: var(--ia-blue); }
+a:hover { color: var(--ia-orange); }

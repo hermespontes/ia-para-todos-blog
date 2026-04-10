@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-04-10T09:21:41.500106",
+  "topic": "IA no trabalho público sem complicação",
+  "model_policy": {
+    "provider": "openrouter",
+    "primary": "openai/gpt-4o-mini",
+    "fallbacks": [
+      "meta-llama/llama-3.1-8b-instruct",
+      "mistralai/mistral-7b-instruct"
+    ],
+    "retry": {
+      "attempts": 3,
+      "backoff_seconds": [
+        1,
+        2,
+        5
+      ],
+      "switch_on": [
+        "timeout",
+        "rate_limit",
+        "5xx",
+        "empty_response",
+        "provider_error"
+      ]
+    }
+  },
+  "agents": {
+    "editorial_planner": {
+      "agent": "editorial_planner",
+      "model": "simulation",
+      "status": "ok",
+      "content": "[SIMULAÇÃO] editorial_planner executado sem OPENROUTER_API_KEY.",
+      "attempt_log": [
+        {
+          "model": "simulation",
+          "attempt": 1,
+          "error": null
+        }
+      ]
+    },
+    "post_writer": {
+      "agent": "post_writer",
+      "model": "simulation",
+      "status": "ok",
+      "content": "[SIMULAÇÃO] post_writer executado sem OPENROUTER_API_KEY.",
+      "attempt_log": [
+        {
+          "model": "simulation",
+          "attempt": 1,
+          "error": null
+        }
+      ]
+    },
+    "youtube_script": {
+      "agent": "youtube_script",
+      "model": "simulation",
+      "status": "ok",
+      "content": "[SIMULAÇÃO] youtube_script executado sem OPENROUTER_API_KEY.",
+      "attempt_log": [
+        {
+          "model": "simulation",
+          "attempt": 1,
+          "error": null
+        }
+      ]
+    },
+    "fact_checker": {
+      "agent": "fact_checker",
+      "model": "simulation",
+      "status": "ok",
+      "content": "[SIMULAÇÃO] fact_checker executado sem OPENROUTER_API_KEY.",
+      "attempt_log": [
+        {
+          "model": "simulation",
+          "attempt": 1,
+          "error": null
+        }
+      ]
+    }
+  },
+  "conversation": [
+    {
+      "from": "editorial_planner",
+      "to": "post_writer",
+      "message": "[SIMULAÇÃO] editorial_planner executado sem OPENROUTER_API_KEY."
+    },
+    {
+      "from": "post_writer",
+      "to": "youtube_script",
+      "message": "[SIMULAÇÃO] post_writer executado sem OPENROUTER_API_KEY."
+    },
+    {
+      "from": "youtube_script",
+      "to": "fact_checker",
+      "message": "[SIMULAÇÃO] youtube_script executado sem OPENROUTER_API_KEY."
+    }
+  ]
+}

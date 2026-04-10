@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-04-10T09:19:26.973834",
+  "model_policy": {
+    "provider": "openrouter",
+    "primary": "openai/gpt-4o-mini",
+    "fallbacks": [
+      "meta-llama/llama-3.1-8b-instruct",
+      "mistralai/mistral-7b-instruct"
+    ],
+    "retry": {
+      "attempts": 3,
+      "backoff_seconds": [
+        1,
+        2,
+        5
+      ],
+      "switch_on": [
+        "timeout",
+        "rate_limit",
+        "5xx",
+        "empty_response",
+        "provider_error"
+      ]
+    }
+  },
+  "planner": {
+    "pautas": [
+      {
+        "titulo": "IA no trabalho público sem complicação",
+        "dor": "medo de ser substituído",
+        "promessa": "usar IA para ganhar tempo",
+        "cta": "baixe checklist"
+      },
+      {
+        "titulo": "Prompt básico para atender melhor o cidadão",
+        "dor": "respostas confusas",
+        "promessa": "respostas claras em 1 minuto",
+        "cta": "teste o template"
+      },
+      {
+        "titulo": "5 erros de IA que iniciantes cometem",
+        "dor": "resultados ruins",
+        "promessa": "evitar retrabalho",
+        "cta": "salve o guia"
+      }
+    ],
+    "model_used": "openai/gpt-4o-mini"
+  },
+  "conversation": [
+    {
+      "agent": "editorial_planner",
+      "message": "Pauta escolhida: IA no trabalho público sem complicação"
+    },
+    {
+      "agent": "post_writer",
+      "message": "Vou escrever com exemplos de rotina administrativa."
+    },
+    {
+      "agent": "youtube_script",
+      "message": "Adaptei para vídeo curto com gancho de 10 segundos."
+    },
+    {
+      "agent": "fact_checker",
+      "message": "Sem afirmações sensíveis; sugeri 2 melhorias de clareza."
+    }
+  ],
+  "post_draft": "IA pode ajudar servidores a reduzir tempo com tarefas repetitivas, como rascunhos de ofícios e triagem de e-mails...",
+  "video_script": "Gancho: Você pode economizar 1 hora por dia com IA sem ser técnico..."
+}
