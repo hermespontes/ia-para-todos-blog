@@ -99,6 +99,7 @@ def call_with_fallback(agent_name: str, system_prompt: str, user_prompt: str):
 def main():
     topic = "IA no trabalho público sem complicação"
     audience = "público não técnico, servidores e iniciantes"
+    now = datetime.now()
 
     conversation = []
 
@@ -127,7 +128,7 @@ def main():
     checker = call_with_fallback("fact_checker", PROMPTS["fact_checker"], checker_user)
 
     result = {
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": now.isoformat(),
         "topic": topic,
         "model_policy": CFG,
         "agents": {
@@ -139,18 +140,25 @@ def main():
         "conversation": conversation,
     }
 
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    stamp = now.strftime("%Y%m%d_%H%M%S")
+    human_time = now.strftime("%d/%m/%Y %H:%M")
     out_json = OUT / f"run_{stamp}.json"
     out_md = OUT / f"run_{stamp}.md"
 
     out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     out_md.write_text(
         "\n\n".join([
-            f"# Execução de agentes ({stamp})",
-            f"## Tema\n{topic}",
-            "## Artigo (post_writer)\n" + writer["content"],
-            "## Roteiro YouTube (youtube_script)\n" + youtube["content"],
-            "## Revisão final (fact_checker)\n" + checker["content"],
+            "# Execução de agentes",
+            "## Resumo",
+            f"- Tema: {topic}",
+            f"- Data e hora: {human_time}",
+            f"- ID da execução: {stamp}",
+            "## Artigo para blog",
+            writer["content"],
+            "## Roteiro para YouTube",
+            youtube["content"],
+            "## Revisão final",
+            checker["content"],
         ]),
         encoding="utf-8",
     )
