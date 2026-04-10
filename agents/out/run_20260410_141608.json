@@ -1,0 +1,258 @@
+{
+  "timestamp": "2026-04-10T14:16:08.254907",
+  "topic": "IA no trabalho público sem complicação",
+  "model_policy": {
+    "provider": "openrouter",
+    "primary": "openai/gpt-4o-mini",
+    "fallbacks": [
+      "meta-llama/llama-3.1-8b-instruct",
+      "mistralai/mistral-7b-instruct"
+    ],
+    "retry": {
+      "attempts": 3,
+      "backoff_seconds": [
+        1,
+        2,
+        5
+      ],
+      "switch_on": [
+        "timeout",
+        "rate_limit",
+        "5xx",
+        "empty_response",
+        "provider_error"
+      ]
+    }
+  },
+  "agents": {
+    "editorial_planner": {
+      "agent": "editorial_planner",
+      "model": null,
+      "status": "failed",
+      "content": "Falha em todos os modelos configurados.",
+      "attempt_log": [
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    "post_writer": {
+      "agent": "post_writer",
+      "model": null,
+      "status": "failed",
+      "content": "Falha em todos os modelos configurados.",
+      "attempt_log": [
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    "youtube_script": {
+      "agent": "youtube_script",
+      "model": null,
+      "status": "failed",
+      "content": "Falha em todos os modelos configurados.",
+      "attempt_log": [
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ]
+    },
+    "fact_checker": {
+      "agent": "fact_checker",
+      "model": null,
+      "status": "failed",
+      "content": "Falha em todos os modelos configurados.",
+      "attempt_log": [
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "openai/gpt-4o-mini",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "meta-llama/llama-3.1-8b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 402: Payment Required"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 1,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 2,
+          "error": "HTTP Error 404: Not Found"
+        },
+        {
+          "model": "mistralai/mistral-7b-instruct",
+          "attempt": 3,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ]
+    }
+  },
+  "conversation": [
+    {
+      "from": "editorial_planner",
+      "to": "post_writer",
+      "message": "Falha em todos os modelos configurados."
+    },
+    {
+      "from": "post_writer",
+      "to": "youtube_script",
+      "message": "Falha em todos os modelos configurados."
+    },
+    {
+      "from": "youtube_script",
+      "to": "fact_checker",
+      "message": "Falha em todos os modelos configurados."
+    }
+  ]
+}
