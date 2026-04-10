@@ -1,7 +1,7 @@
 title: IA para Todos
 description: IA prática para quem não é técnico
-baseurl: ""
-url: ""
+baseurl: "/ia-para-todos-blog"
+url: "https://hermespontes.github.io"
 theme: minima
 lang: pt-BR
 markdown: kramdown
