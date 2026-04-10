@@ -1,0 +1,20 @@
+{
+  "primary": {
+    "provider": "openrouter",
+    "model": "arcee-ai/trinity-large-preview:free"
+  },
+  "fallbacks": [
+    {
+      "provider": "openrouter",
+      "model": "meta-llama/llama-3.1-8b-instruct"
+    },
+    {
+      "provider": "openrouter",
+      "model": "mistralai/mistral-7b-instruct"
+    }
+  ],
+  "retry": {
+    "max_attempts_per_model": 2,
+    "backoff_seconds": [2, 5]
+  }
+}

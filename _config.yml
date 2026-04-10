@@ -1,0 +1,14 @@
+title: IA para Todos
+description: "IA descomplicada para pessoas não-técnicas."
+url: ""
+baseurl: ""
+
+# GitHub Pages usa safe mode (plugins limitados). Mantemos o setup simples.
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# Aparência
+theme: minima
+
+# Idioma
+lang: pt-BR

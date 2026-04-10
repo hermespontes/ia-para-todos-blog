@@ -1,0 +1,30 @@
+/* Paleta sugerida anteriormente:
+   Primária: #4A90E2
+   Secundária: #F5A623
+   Texto: #333333
+   Fundo: #FFFFFF
+*/
+
+:root {
+  --primary: #4A90E2;
+  --secondary: #F5A623;
+  --text: #333333;
+  --bg: #FFFFFF;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+}
+
+a, a:visited {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+.site-title, .post-title {
+  letter-spacing: 0.2px;
+}
