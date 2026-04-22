@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Primeiro post automático do IA para Todos"
-date: 2026-04-22 08:10:00 -0300
+date: 2026-04-22 00:10:00 -0300
 categories: ia basico
 ---
 
